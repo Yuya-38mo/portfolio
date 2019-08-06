@@ -31,17 +31,18 @@
 
         <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
         <a-marker type="pattern" url="pattern-hellotrain.patt">
-            <!-- マーカーの場所に OBJ 形式の 3DCG を置く -->
-            <a-entity>
-                <a-obj-model id="model" src="#obj" mtl="#mtl" scale="0.005 0.005 0.005" position="0 0.5 0"></a-obj-model>
-            </a-entity>
             
-            <!-- マーカーの下に文字を出力 -->
+            <!-- 文字を出力 -->
             <a-entity>
                 <a-text value="Welcome!!\nTsu Advanced\nVocatinal\nTechnical School" position="0 0 1" align="center" rotation="-90 0 0" color="#DD4827"></a-text>
                 <!-- a-textを内包するa-entityをy軸周りで360度回転するアニメーション -->
                 <!-- dur(間隔):4000(ms), repeat(繰り返し):止めない限り無限, easing(イージング):線形(イージングしない)-->
                 <a-animation attribute="rotation" to="0 360 0" dur="4000" repeat="indefinite" easing="linear"></a-animation>
+            </a-entity>
+            
+            <!-- マーカーの場所に OBJ 形式の 3DCG を置く -->
+            <a-entity>
+                <a-obj-model id="model" src="#obj" mtl="#mtl" scale="0.005 0.005 0.005" position="0 0.5 0"></a-obj-model>
             </a-entity>
          
         </a-marker>
