@@ -12,29 +12,6 @@
     <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
     <!-- AR.js ライブラリの読み込み -->
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
-
-    <script>
-        AFRAME.registerComponent('registerevents', {
-            init: function () {
-                var marker = this.el;
-                // マーカーを検出したイベントの登録
-                marker.addEventListener('markerFound', function () {
-                    var markerId = marker.id;
-                    console.log('markerFound', markerId);
-                    // アニメーションの開始
-                    document.querySelector('#model').emit('markerfound');
-                });
-                
-                // マーカーを見失ったイベントの登録
-                marker.addEventListener('markerLost', function () {
-                    var markerId = marker.id;
-                    console.log('markerLost', markerId);
-                    // アニメーションの停止
-                    document.querySelector('#model').emit('markerlost');
-                });
-            }
-        });
-    </script>
     
     <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIは非表示） -->
     <a-scene embedded arjs="debugUIEnabled:false;">
