@@ -33,10 +33,11 @@
             <a-obj-model src="#obj" mtl="#mtl" scale="0.005 0.005 0.005" position="0 0.5 0"></a-obj-model>
             
             <!-- 文字を出力 -->
-            <a-text value="Welcome!!\nTsu Advanced\nVocatinal\nTechnical School" position="0 0 1" align="center" rotation="-90 0 0" color="#DD4827" animation="property: position; to: 5 1.6 0; dur: 1500; easing: linear"></a-text>
-            <!-- a-textを内包するa-entityをy軸周りで360度回転するアニメーション -->
-            <!-- dur(間隔):4000(ms), repeat(繰り返し):止めない限り無限, easing(イージング):線形(イージングしない)-->
-            <!--a-animation attribute="rotation" to="0 360 0" dur="4000" repeat="indefinite" easing="linear"></a-animation-->
+            <a-text value="Welcome!!\nTsu Advanced\nVocatinal\nTechnical School" position="0 0 1" align="center" rotation="-90 0 0" color="#DD4827">
+                <!-- a-textを内包するa-entityをy軸周りで360度回転するアニメーション -->
+                <!-- dur(間隔):4000(ms), repeat(繰り返し):止めない限り無限, easing(イージング):線形(イージングしない)-->
+                <a-animation attribute="rotation" to="0 360 0" dur="4000" repeat="indefinite" easing="linear"></a-animation>
+            </a-text>
          
         </a-marker>
 
