@@ -13,6 +13,29 @@
     <!-- AR.js ライブラリの読み込み -->
     <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.7/aframe/build/aframe-ar.js"></script>
 
+    <script>
+        AFRAME.registerComponent('registerevents', {
+            init: function () {
+                var marker = this.el;
+                // マーカーを検出したイベントの登録
+                marker.addEventListener('markerFound', function () {
+                    var markerId = marker.id;
+                    console.log('markerFound', markerId);
+                    // アニメーションの開始
+                    document.querySelector('#model').emit('markerfound');
+                });
+                
+                // マーカーを見失ったイベントの登録
+                marker.addEventListener('markerLost', function () {
+                    var markerId = marker.id;
+                    console.log('markerLost', markerId);
+                    // アニメーションの停止
+                    document.querySelector('#model').emit('markerlost');
+                });
+            }
+        });
+    </script>
+    
     <!-- A-Frame の VR空間に AR.js を紐づける（デバッグUIは非表示） -->
     <a-scene embedded arjs="debugUIEnabled:false;">
 
@@ -27,8 +50,8 @@
         <!-- マーカーを登録（プリセットされている「hiro」マーカー） -->
         <a-marker type="pattern" url="pattern-hellotrain.patt">
             <!-- マーカーの場所に OBJ 形式の 3DCG を置く -->
-            <a-obj-model src="#obj" mtl="#mtl" scale="0.005 0.005 0.005" position="0 0.5 0">
-                <a-animation attribute="rotation" to="0 360 0" dur="3000" easing="linear" repeat="indefinite"></a-animation>
+            <a-obj-model id="model" src="#obj" mtl="#mtl" scale="0.005 0.005 0.005" position="0 0.5 0">
+                <a-animation attribute="rotation" to="0 360 0" dur="3000" easing="linear" repeat="indefinite" begin="markerfound" end="markerlost"></a-animation>
             </a-obj-model>
             <!-- マーカーの下に文字を出力 -->
             <a-text value="Welcome!!\nTsu Advanced\nVocatinal\nTechnical School" position=" 0 0 1" align="center" rotation="-90 0 0" color="#DD4827"></a-text>
