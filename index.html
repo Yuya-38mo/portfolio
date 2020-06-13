@@ -22,9 +22,9 @@
         <!-- OBJ形式のCGモデルの読み込み -->
         <a-assets>
             <!-- objファイル -->
-            <a-asset-item id="obj" src="model/miku/miku.obj"></a-asset-item>
+            <a-asset-item id="obj" src="model/miku/append.obj"></a-asset-item>
             <!-- mtlファイル -->
-            <a-asset-item id="mtl" src="model/miku/miku.mtl"></a-asset-item>
+            <a-asset-item id="mtl" src="model/miku/append.mtl"></a-asset-item>
             <!-- 画像をプリロード -->
             <!--
             <img id="logo" src="">
@@ -36,7 +36,7 @@
 
             <!-- マーカーの場所に OBJ 形式の 3DCG を置く -->
             <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 7500; easing: linear">
-                <a-obj-model src="#obj" mtl="#mtl" scale="1 1 1" position="0 0.5 0"></a-obj-model>
+                <a-obj-model src="#obj" mtl="#mtl" scale="0.5 0.5 0.5" position="0 0.5 0"></a-obj-model>
                 <!-- アニメーション（旧バージョン） -->
                 <!--
                     <a-animation attribute="rotation" to="0 360 0" dur="6000" repeat="indefinite" easing="linear"></a-animation>
