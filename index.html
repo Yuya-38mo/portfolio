@@ -22,15 +22,15 @@
         <!-- OBJ形式のCGモデルの読み込み -->
         <a-assets>
             <!-- objファイル -->
-            <!--
             <a-asset-item id="obj" src="model/Seina_Raiden_ver1.0/Seina_Raiden.obj"></a-asset-item>
-            -->
-            <a-asset-item id="obj" src="model/fish/fish.obj"></a-asset-item-->
-            <!-- mtlファイル -->
             <!--
-            <a-asset-item id="mtl" src="model/Seina_Raiden_ver1.0/Seina_Raiden.mtl"></a-asset-item>
+            <a-asset-item id="obj" src="model/fish/fish.obj"></a-asset-item>
             -->
+            <!-- mtlファイル -->
+            <a-asset-item id="mtl" src="model/Seina_Raiden_ver1.0/Seina_Raiden.mtl"></a-asset-item>
+            <!--
             <a-asset-item id="mtl" src="model/fish/fish.mtl"></a-asset-item>
+            -->
             <!-- 画像をプリロード -->
             <!--
             <img id="logo" src="">
@@ -42,7 +42,7 @@
 
             <!-- マーカーの場所に OBJ 形式の 3DCG を置く -->
             <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 7500; easing: linear">
-                <a-obj-model src="#obj" mtl="#mtl" scale="0.004 0.004 0.004" position="0 0.5 0"></a-obj-model>
+                <a-obj-model src="#obj" mtl="#mtl" scale="1.0 1.0 1.0" position="0 0.5 0"></a-obj-model>
                 <!-- アニメーション（旧バージョン） -->
                 <!--
                     <a-animation attribute="rotation" to="0 360 0" dur="6000" repeat="indefinite" easing="linear"></a-animation>
