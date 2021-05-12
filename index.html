@@ -9,7 +9,6 @@
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <!-- AR.jsを読み込み -->
     <script src="https://raw.githack.com/jeromeetienne/AR.js/2.2.0/aframe/build/aframe-ar.js"></script>
-    <!-- <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"> -->
     <!-- アイコン素材の読み込み -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- スタイルシートを読み込み -->
@@ -24,9 +23,10 @@
         <a-assets>
             <!-- objファイル -->
             <a-asset-item id="obj" src="model/fish/fish.obj"></a-asset-item>
+
             <!-- mtlファイル -->
             <a-asset-item id="mtl" src="model/fish/fish.mtl"></a-asset-item>
-            
+
             <!-- 画像をプリロード -->
             <!--
             <img id="logo" src="">
@@ -36,10 +36,11 @@
         <!-- マーカーを登録（作成したQRコードマーカー） -->
         <a-marker type="pattern" url="pattern-hellotrain.patt">
 
+
             <!-- マーカーの場所に OBJ 形式の 3DCG を置く -->
-            <!-- a-box position="0 0.5 0" wireframe="true"></a-box> -->
-            <a-obj-model src="#obj" mtl="#mtl" scale="0.005 0.005 0.005" position="0 0.5 0"></a-obj-model>
-           
+
+            <a-obj-model src="#obj" mtl="#mtl" scale="1.0 1.0 1.0" position="0 0.5 0"></a-obj-model>
+
             <!--
             <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 7500; easing: linear">
                 <a-obj-model src="#obj" mtl="#mtl" scale="1.0 1.0 1.0" position="0 0.5 0"></a-obj-model>
